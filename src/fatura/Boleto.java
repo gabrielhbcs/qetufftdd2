@@ -8,7 +8,7 @@ import produto.Produto;
 public class Boleto {
 	private String codigoBoleto;
 	private Date dataVencimento;
-	private Double valorPago;
+	private Double valorPago; // valor do boleto
 	
 	public String getCodigoBoleto() {
 		return codigoBoleto;

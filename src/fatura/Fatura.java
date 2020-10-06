@@ -23,15 +23,20 @@ public class Fatura {
 		return nomeCliente;
 	}
 	public boolean isFaturaPaga() {
-		return isFaturaPaga;
+		double totalValorBoleto = 0;
+		double totalValorPago = 0;
+		for(Pagamento element:this.pagamentos) {
+			totalValorBoleto += element.getBoleto().getValorPago();
+			totalValorPago += element.getValorPago();		
+		}
+		return totalValorPago >= totalValorBoleto;
 	}
-	public void setFaturaPaga(boolean isFaturaPaga) {
-		this.isFaturaPaga = isFaturaPaga;
-	}	
 
 	public Fatura(String nomeCliente, Date dataFatura){
 		this.nomeCliente = nomeCliente;
 		this.data = dataFatura;
 	}
+	
+	
 	
 }
